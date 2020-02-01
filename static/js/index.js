@@ -1,5 +1,5 @@
 (function() {
-  var _isAdmin = window.location.href.substr(-5).toLowerCase() === 'admin';
+  var _isAdmin = window.location.href.substr(-5).toLowerCase() === 'admin/';
 
   // 判断是否是移动设备
   var u = navigator.userAgent;
