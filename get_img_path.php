@@ -21,7 +21,7 @@ foreach($filename as $k=>$v){
     $conname[] = substr(substr($v,0,strpos($v,".")),strrpos($v,'_')+1);
 }
 $data = [];
-var_dump($conname);
+//var_dump($conname);
 foreach ($conname as $item){
     if(strlen($item)<2){
         continue;
@@ -30,7 +30,7 @@ foreach ($conname as $item){
     $data[]=['picId'=>'mini_'.$menuId.'_'.$item.'.jpg','size'=>'225*150'];
 }
 $a = ob_get_clean();
-echo json_encode(['status'=>'ok','msg'=>'success','data'=>$data]);die;
+echo json_encode(['status'=>'ok','msg'=>'success','data'=>array_unique($data)]);die;
 /**
 {
 "status":"ok",

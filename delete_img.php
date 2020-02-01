@@ -10,6 +10,7 @@ $menuId = isset($_GET['menuId'])?$_GET['menuId']:'menu01';
 $picId = isset($_GET['picId'])?$_GET['picId']:'mini_menu01_001.jpg';
 $path = __DIR__."/static/img/$menuId/$picId";
 unlink($path);
+unlink(str_replace('mini_','',$path));
 
 $a = ob_get_clean();
 echo json_encode(['status'=>'ok','msg'=>'success']);die;
