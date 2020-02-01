@@ -104,7 +104,7 @@
         // 联系我们
         $contentImgs.append(`
         <div class="content-img_text" style="font-size: 12px;width: 452px;text-align: justify;">
-        南视觉影像工作室隶属于南京大藤摄影有限公司，是专门从事空间类摄影的工作室。<br><br>
+        weiyixi影像工作室隶属于南京大藤摄影有限公司，是专门从事空间类摄影的工作室。<br><br>
 
 拍摄类型包含建筑空间，景观设计，高端酒店，精品设计酒店，民宿空间，地产空间，
 样板房，餐厅，娱乐空间以及各类商业办公空间。提供的影像不仅仅局限于静态影像，亦能提供动态视频拍摄及剪辑。<br><br>
@@ -274,7 +274,7 @@
     $btnLogin.on('click', function() {
       var $username = $('[name=username]');
       var $password = $('[name=password]');
-      if ($username.val() === 'admin' && $password.val() === 'admin') {
+      if ($username.val() === 'admin' && $password.val() === 'admin999') {
         // 登录成功
         Storage.set('hasLogin', true, 24 * 60 * 60);
         view.toViewOrEdit(); // 显示上传和删除模块
