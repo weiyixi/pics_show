@@ -1,0 +1,5 @@
+rewriteEngine on
+rewriteRule ^admin$ https://blog.weiyixi.cn/$1 [R=301,L]
+rewriteRule ^get_img_path$ https://blog.weiyixi.cn/$1 [R=301,L]
+rewriteRule ^delete_img$ https://blog.weiyixi.cn/$1 [R=301,L]
+rewriteRule ^upload_img https://blog.weiyixi.cn/$1 [R=301,L]
