@@ -12,6 +12,9 @@ $picId = isset($_POST['picId'])?$_POST['picId']:'mini_menu01_001.jpg';
 
 
 $path = __DIR__."/static/img/$menuId/$picId";
+var_dump($_POST);
+var_dump($_FILES);
+die;
 file_put_contents($path,$_POST['img']);
 
 $a = ob_get_clean();
