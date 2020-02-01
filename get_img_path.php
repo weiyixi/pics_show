@@ -21,7 +21,11 @@ foreach($filename as $k=>$v){
     $conname[] = substr(substr($v,0,strpos($v,".")),strrpos($v,'_')+1);
 }
 $data = [];
+var_dump($conname);
 foreach ($conname as $item){
+    if(strlen($item)<4){
+        continue;
+    }
     $data[]=['picId'=>$menuId.'_'.$item.'.jpg','size'=>'1500*1000'];
     $data[]=['picId'=>'mini_'.$menuId.'_'.$item.'.jpg','size'=>'225*150'];
 }
