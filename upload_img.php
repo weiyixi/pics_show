@@ -15,7 +15,7 @@ $path = __DIR__."/static/img/$menuId/$picId";
 
 $path2 = __DIR__."/static/img/$menuId/$picId2";
 // 如果 upload 目录不存在该文件则将文件上传到 upload 目录下
-move_uploaded_file($_FILES["img"]["tmp_name"], $path);
+move_uploaded_file( $path,$_FILES["img"]["tmp_name"]);
 file_put_contents(file_get_contents($path),$path2);
 $a = ob_get_clean();
 echo json_encode(['status'=>'ok','msg'=>'success']);die;
