@@ -123,8 +123,10 @@
           var dataSorted_mini = [];
           for (var i = 0; i < data.data.length; i++) {
             var curPicId = data.data[i].picId;
+            console.log(curPicId);
             if (curPicId.substr(0, 4) === 'mini') {
               var curNum = getNumFromId(curPicId);
+                console.log(curNum);
               if (dataSorted_mini.length === 0) {
                 dataSorted_mini.push(data.data[i]);
               } else {
