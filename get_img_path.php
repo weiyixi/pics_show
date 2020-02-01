@@ -23,7 +23,7 @@ foreach($filename as $k=>$v){
 $data = [];
 foreach ($conname as $item){
     $data[]=['picId'=>$menuId.'_'.$item.'.jpg','size'=>'1500*1000'];
-    $data[]=['picId'=>'mini_'.$menuId.'_'.$item.'.jpg','size'=>'1500*1000'];
+    $data[]=['picId'=>'mini_'.$menuId.'_'.$item.'.jpg','size'=>'225*150'];
 }
 $a = ob_get_clean();
 echo json_encode(['status'=>'ok','msg'=>'success','data'=>$data]);die;
