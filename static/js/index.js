@@ -1,5 +1,5 @@
 (function() {
-  var _isAdmin = window.location.href.substr(-6).toLowerCase() === 'admin/';
+  var _isAdmin = window.location.href.substr(-6).toLowerCase() == 'admin/';
 
   // 判断是否是移动设备
   var u = navigator.userAgent;
@@ -100,7 +100,7 @@
       $contentImgs.find('.content-img_box').remove();
       $contentImgs.find('.content-img_text').remove();
 
-      if (menuId === 'menu12') {
+      if (menuId == 'menu12') {
         // 联系我们
         $contentImgs.append(`
         <div class="content-img_text" style="font-size: 12px;width: 452px;text-align: justify;">
@@ -119,22 +119,22 @@
       // 获取资源
       $.get('/get_img_path.php?menuId=' + menuId, function(data) {
         console.log(data);
-        if (data.status === 'ok') {
+        if (data.status == 'ok') {
           // 排序
           var dataSorted_mini = [];
           for (var i = 0; i < data.data.length; i++) {
             var curPicId = data.data[i].picId;
             console.log(curPicId);
-            if (curPicId.substr(0, 4) === 'mini') {
+            if (curPicId.substr(0, 4) == 'mini') {
               var curNum = getNumFromId(curPicId);
                 console.log(curNum);
-              if (dataSorted_mini.length === 0) {
+              if (dataSorted_mini.length == 0) {
                 dataSorted_mini.push(data.data[i]);
               } else {
                 for (var j = 0; j < dataSorted_mini.length; j++) {
                   var num = getNumFromId(dataSorted_mini[j].picId);
                   if (curNum > num) {
-                    if (j === dataSorted_mini.length - 1) {
+                    if (j == dataSorted_mini.length - 1) {
                       // 最后一个
                       dataSorted_mini.push(data.data[i]);
                       break;
@@ -153,7 +153,7 @@
           _dataSorted_mini = dataSorted_mini;
           // 加载图片
           dataSorted_mini.forEach(function(ele) {
-            if (ele.picId.substr(0, 4) === 'mini') {
+            if (ele.picId.substr(0, 4) == 'mini') {
               var html =
                 '<div class="content-img_box">\
                                             <img data-picId="' +
@@ -183,7 +183,7 @@
         if (e && e.keyCode == 37) {
           //左
           var $zoomPic = $('.zoom-pic');
-          if ($zoomPic.attr('src').indexOf('carousel') === -1) {
+          if ($zoomPic.attr('src').indexOf('carousel') == -1) {
             for (var i = 0; i < _dataSorted_mini.length; i++) {
               if (
                 $zoomPic
@@ -191,7 +191,7 @@
                   .indexOf(_dataSorted_mini[i].picId.replace('mini_', '')) !==
                 -1
               ) {
-                if (i === 0) {
+                if (i == 0) {
                   var zoomSrc = $zoomPic.attr('src').split('/');
                   zoomSrc.splice(
                     -1,
@@ -213,7 +213,7 @@
         if (e && e.keyCode == 39) {
           //右
           var $zoomPic = $('.zoom-pic');
-          if ($zoomPic.attr('src').indexOf('carousel') === -1) {
+          if ($zoomPic.attr('src').indexOf('carousel') == -1) {
             for (var i = 0; i < _dataSorted_mini.length; i++) {
               if (
                 $zoomPic
@@ -221,7 +221,7 @@
                   .indexOf(_dataSorted_mini[i].picId.replace('mini_', '')) !==
                 -1
               ) {
-                if (i === _dataSorted_mini.length - 1) {
+                if (i == _dataSorted_mini.length - 1) {
                   var zoomSrc = $zoomPic.attr('src').split('/');
                   zoomSrc.splice(-1, 1, _dataSorted_mini[0].picId);
                   $zoomPic.attr('src', zoomSrc.join('/').replace('mini_', ''));
@@ -277,7 +277,7 @@
     $btnLogin.on('click', function() {
       var $username = $('[name=username]');
       var $password = $('[name=password]');
-      if ($username.val() === 'admin' && $password.val() === 'admin999') {
+      if ($username.val() == 'admin' && $password.val() == 'admin999') {
         // 登录成功
         Storage.set('hasLogin', true, 24 * 60 * 60);
         view.toViewOrEdit(); // 显示上传和删除模块
@@ -362,7 +362,7 @@
         return;
       }
       var $btnLogin = $('#btnLogin');
-      if (type === 'success') {
+      if (type == 'success') {
         $btnLogin.text('登录成功');
         $btnLogin
           .css('pointer-events', 'none')
