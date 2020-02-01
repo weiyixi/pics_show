@@ -117,7 +117,7 @@
       }
 
       // 获取资源
-      $.get('/get_img_path?menuId=' + menuId, function(data) {
+      $.get('/get_img_path.php?menuId=' + menuId, function(data) {
         if (data.status === 'ok') {
           // 排序
           var dataSorted_mini = [];
@@ -245,7 +245,7 @@
       var $contentBox = $iconRemove.parents('.content-img_box');
 
       $.get(
-        '/delete_img?picId=' + picId + '&menuId=' + $curSel.attr('data-menuId'),
+        '/delete_img.php?picId=' + picId + '&menuId=' + $curSel.attr('data-menuId'),
         function(data, status) {
           $contentBox.remove();
         }
@@ -413,7 +413,7 @@
       $fileupload
         .trigger('click')
         .fileupload({
-          url: '/upload_img',
+          url: '/upload_img.php',
           dataType: 'json',
           /* sequentialUploads: true, // 是否按顺序一个个上传 */
           limitConcurrentUploads: 3,
