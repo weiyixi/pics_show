@@ -119,6 +119,7 @@
       // 获取资源
       $.get('/get_img_path.php?menuId=' + menuId, function(data) {
           console.log(data);
+          data = JSON. parse(data);
           console.log(data.status);
         if (data.status == 'ok') {
           // 排序
