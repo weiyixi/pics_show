@@ -23,7 +23,7 @@ foreach($filename as $k=>$v){
 $data = [];
 var_dump($conname);
 foreach ($conname as $item){
-    if(strlen($item)<4){
+    if(strlen($item)<2){
         continue;
     }
     $data[]=['picId'=>$menuId.'_'.$item.'.jpg','size'=>'1500*1000'];
