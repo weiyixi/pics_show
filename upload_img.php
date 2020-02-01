@@ -8,8 +8,8 @@
 
 //img: (binary)
 $menuId = isset($_POST['menuId'])?$_POST['menuId']:'menu01';
-$picId = isset($_POST['picId'])?$_POST['picId']:'mini_menu01_001.jpg';
-$picId2  = isset($_POST['picId'])?$_POST['picId']:'menu01_001.jpg';
+$picId = isset($_POST['picId'])?$_POST['picId']:'menu01_001.jpg';
+$picId2  = 'mini_'.$picId;
 
 $path = __DIR__."/static/img/$menuId/$picId";
 
