@@ -64,7 +64,7 @@ if (!empty($_FILES)) {
     @ move_uploaded_file($tem_name, $path);
 
 sleep(1);
-    file_put_contents(file_get_contents($path),$path2);
+    file_put_contents($path2,file_get_contents($path));
 $msg = 'success';
 
 } else {
